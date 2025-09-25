@@ -21,7 +21,7 @@ export default function TranslatedImageOverlay({
   };
 
   return (
-    <div className={`absolute ${positionClasses[position]} z-10 bg-blue-600/90 text-white p-3 rounded-lg shadow-lg max-w-xs`}>
+    <div className={`absolute ${positionClasses[position]} z-10 bg-blue-600/90 text-white p-3 rounded-lg shadow-lg max-w-xs md:block hidden`}>
       <h4 className="font-bold text-sm mb-2">{descriptions.title}</h4>
       <ul className="text-xs space-y-1">
         {descriptions.items.map((item, index) => (
