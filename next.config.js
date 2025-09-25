@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   allowedDevOrigins: ["*.preview.same-app.com"],
+  output: 'standalone',
   images: {
     unoptimized: true,
     domains: [
@@ -8,6 +9,7 @@ const nextConfig = {
       "images.unsplash.com",
       "ext.same-assets.com",
       "ugc.same-assets.com",
+      "img.youtube.com",
     ],
     remotePatterns: [
       {
@@ -28,6 +30,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "ugc.same-assets.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
         pathname: "/**",
       },
     ],

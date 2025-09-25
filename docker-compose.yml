@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  topdon-landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: topdon-obd2-landing
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - topdon-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/test-db || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  topdon-network:
+    driver: bridge
+
+volumes:
+  app_data:
+    driver: local

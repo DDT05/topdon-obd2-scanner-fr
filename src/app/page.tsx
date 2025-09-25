@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import TranslatedImageOverlay from "@/components/TranslatedImageOverlay";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export default function Home() {
   return (
@@ -27,70 +28,27 @@ export default function Home() {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Scanner OBD2 TOPDON CarPal</h1>
-            <p className="text-xl mb-8">Scanner Bluetooth pour Diagnostic Automobile - Votre Solution Complète pour la Santé de Votre Véhicule</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#subscribe" className="inline-block">
-                <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
-                  Recevoir des Mises à Jour
-                </Button>
-              </a>
-              <a href="#features" className="inline-block">
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-blue-600">
-                  En Savoir Plus
-                </Button>
-              </a>
+            <p className="text-xl mb-8">Le gadget de réparation pour voiture qui fait économiser des milliers d'euros</p>
+            <div className="max-w-md">
+              <NewsletterForm />
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            {/* Improved YouTube embed with preview image and lazy loading */}
-            <div className="relative w-full aspect-video max-w-[560px] rounded-lg overflow-hidden shadow-xl group">
-              <a
-                href="https://www.youtube.com/watch?v=77gYz0NLcxI"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Regarder la vidéo de présentation du TOPDON CarPal OBD2 Scanner"
-                className="block w-full h-full"
-                tabIndex={-1}
-              >
-                <Image
-                  src="https://img.youtube.com/vi/77gYz0NLcxI/hqdefault.jpg"
-                  alt="Aperçu vidéo TOPDON CarPal OBD2 Scanner"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="transition-opacity duration-300 group-hover:opacity-80"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 560px"
-                  priority={false}
-                />
-                <span className="absolute inset-0 flex items-center justify-center">
-                  <span className="bg-black/60 rounded-full p-4">
-                    <svg
-                      width={64}
-                      height={64}
-                      viewBox="0 0 64 64"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-white"
-                    >
-                      <circle cx="32" cy="32" r="32" fill="currentColor" opacity="0.6" />
-                      <polygon points="26,20 48,32 26,44" fill="#fff" />
-                    </svg>
-                  </span>
-                </span>
-              </a>
-              <noscript>
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/77gYz0NLcxI?rel=0"
-                  title="TOPDON CarPal OBD2 Scanner Vidéo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute w-full h-full top-0 left-0 border-0"
-                ></iframe>
-              </noscript>
+            <div className="relative w-full aspect-video max-w-[560px] rounded-lg overflow-hidden shadow-xl">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/77gYz0NLcxI?rel=0"
+                title="TOPDON CarPal OBD2 Scanner Vidéo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="w-full h-full border-0 rounded-lg"
+              ></iframe>
             </div>
+            <p className="text-center text-sm mt-3 text-blue-100">
+              💡 Audio français disponible dans les paramètres de la vidéo
+            </p>
           </div>
         </div>
       </section>
@@ -419,48 +377,15 @@ export default function Home() {
               Soyez le premier à connaître les nouvelles fonctionnalités, promotions et recevez des guides d'entretien automobile exclusifs. <span className="font-bold text-red-600">Ne manquez pas nos offres exclusives pour les nouveaux abonnés !</span>
             </p>
 
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nom Complet</label>
-                <Input
-                  type="text"
-                  id="name"
-                  placeholder="Entrez votre nom complet"
-                  className="w-full"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Adresse Email</label>
-                <Input
-                  type="email"
-                  id="email"
-                  placeholder="Entrez votre adresse email"
-                  className="w-full"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="carModel" className="block text-sm font-medium text-gray-700 mb-1">Marque & Modèle de Voiture (Optionnel)</label>
-                <Input
-                  type="text"
-                  id="carModel"
-                  placeholder="ex., Renault Clio 2018"
-                  className="w-full"
-                />
-              </div>
-              <Button className="w-full bg-blue-700 hover:bg-blue-800 text-white">
-                S'abonner Maintenant
-              </Button>
-              <div className="text-center mt-2">
-                <span className="inline-block bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-                  Plus que 23 places disponibles pour l'offre spéciale !
-                </span>
-              </div>
-              <p className="text-xs text-gray-500 text-center mt-4">
-                En vous abonnant, vous acceptez de recevoir des emails marketing. Vous pouvez vous désabonner à tout moment.
-              </p>
-            </form>
+            <NewsletterForm />
+            <div className="text-center mt-2">
+              <span className="inline-block bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                Plus que 23 places disponibles pour l'offre spéciale !
+              </span>
+            </div>
+            <p className="text-xs text-gray-500 text-center mt-4">
+              En vous abonnant, vous acceptez de recevoir des emails marketing. Vous pouvez vous désabonner à tout moment.
+            </p>
           </div>
         </div>
       </section>
@@ -468,7 +393,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+         {/*<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <h4 className="text-xl font-bold mb-4">TOPDON</h4>
               <p className="mb-4">Solutions Professionnelles de Diagnostic Automobile</p>
@@ -526,9 +451,9 @@ export default function Home() {
                 <li><a href="#" className="hover:text-blue-400">Politique des Cookies</a></li>
               </ul>
             </div>
-          </div>
+          </div>*/}
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; {new Date().getFullYear()} TOPDON. Tous droits réservés. Ceci est une page de démonstration.</p>
+            <p>&copy; {new Date().getFullYear()} TOPDON. Tous droits réservés.</p>
           </div>
         </div>
       </footer>

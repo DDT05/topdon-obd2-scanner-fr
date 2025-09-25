@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun add:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "Bash(python:*)",
+      "Bash(docker build:*)",
+      "Bash(npm run build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
